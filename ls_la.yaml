@@ -7,4 +7,4 @@
       register: lsla
 
     - debug:
-        var: lsla
+        var: lsla.stdout_lines
