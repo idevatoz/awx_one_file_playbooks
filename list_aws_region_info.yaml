@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+  tasks:
+    - name: Gather information about all regions
+      # community.aws.aws_region_info:
+      # register: all_regions_info_output
+
+    # - debug:
+    #     msg: "{{ all_regions_info_output }}"		
+
+      community.aws.aws_region_info:
+        filters:
+          region-name: us-east-1
+      register: us_east_1_region_info_output
+
+
+    - debug:
+        msg: "{{ us_east_1_region_info_output }}"		
