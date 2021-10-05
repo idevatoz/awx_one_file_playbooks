@@ -5,7 +5,8 @@
   tasks:
     - name: Gather information about all regions
       community.aws.aws_region_info:
-        region: us-east-1
+        aws_region: us-east-1
+        # region: us-east-1
         filters:
           region-name: us-east-1
       register: us_east_1_region_info_output
